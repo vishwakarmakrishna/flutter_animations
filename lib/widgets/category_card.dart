@@ -25,8 +25,8 @@ class CategoryCard extends StatelessWidget {
       ),
       decoration: const NeoPopTiltedButtonDecoration(
         color: Color.fromRGBO(255, 235, 52, 1),
-        plunkColor: Color.fromRGBO(255, 230, 3, 1),
-        shadowColor: Color.fromRGBO(255, 255, 0, 0.451),
+        plunkColor: Color.fromRGBO(255, 243, 131, 1),
+        shadowColor: Color.fromRGBO(0, 0, 0, 1),
         showShimmer: true,
       ),
       child: Padding(

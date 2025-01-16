@@ -17,8 +17,15 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xff2D2D2D),
       appBar: AppBar(
-        title: const Text('Animation Showcase'),
+        backgroundColor: const Color(0xff2D2D2D),
+        title: const Text(
+          'Animation Showcase',
+          style: TextStyle(
+            color: Color.fromRGBO(255, 235, 52, 1),
+          ),
+        ),
         elevation: 0,
       ),
       body: ListView(
