@@ -1,6 +1,5 @@
 // # lib/screens/animations/gesture_animations_page.dart
 import 'package:flutter/material.dart';
-import 'dart:math' as math;
 
 class GestureAnimationsPage extends StatefulWidget {
   const GestureAnimationsPage({super.key});
@@ -68,7 +67,7 @@ class _GestureAnimationsPageState extends State<GestureAnimationsPage>
                           borderRadius: BorderRadius.circular(16),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black.withOpacity(0.2),
+                              color: Colors.black.withValues(alpha: 0.2),
                               spreadRadius: 2,
                               blurRadius: 5,
                               offset: const Offset(0, 3),

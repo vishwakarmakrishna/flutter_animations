@@ -146,7 +146,7 @@ class _CustomAnimationsPageState extends State<CustomAnimationsPage>
       'particleSize': _particleSize,
       'particleSpeed': _particleSpeed,
       'particleOpacity': _particleOpacity,
-      'particleColor': _particleColor.value,
+      'particleColor': _particleColor,
       'showTrails': _showTrails,
       'randomColors': _randomColors,
       'particleShape': _particleShape.index,
@@ -203,7 +203,7 @@ class _CustomAnimationsPageState extends State<CustomAnimationsPage>
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.2),
+                      color: Colors.black.withValues(alpha: 0.2),
                       blurRadius: 10,
                       spreadRadius: 5,
                     ),
@@ -571,9 +571,6 @@ class Particle {
   }) {
     reset();
     opacity = baseOpacity;
-    if (color != null) {
-      this.color = color;
-    }
   }
 
   void reset() {
@@ -640,8 +637,8 @@ class ParticlePainter extends CustomPainter {
       particle.update(size);
 
       final paint = Paint()
-        ..color =
-            (particle.color ?? Colors.transparent).withOpacity(particle.opacity)
+        ..color = (particle.color ?? Colors.transparent)
+            .withValues(alpha: particle.opacity)
         ..style = PaintingStyle.fill;
 
       // Draw particle based on shape
@@ -680,7 +677,7 @@ class ParticlePainter extends CustomPainter {
             particle.y - particle.speed * math.sin(particle.angle) * 2,
           ),
           particle.size * 0.8 * (1 + animation),
-          paint..color = paint.color.withOpacity(paint.color.opacity * 0.5),
+          paint..color = paint.color.withValues(alpha: paint.color.a * 0.5),
         );
       }
     }
