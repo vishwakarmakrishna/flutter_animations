@@ -1,4 +1,4 @@
-package com.krishnavishwakarma.flutter_animation_showcase
+package com.krishnavishwakarma.animationshowcase
 
 import io.flutter.embedding.android.FlutterActivity
 

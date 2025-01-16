@@ -1,6 +1,5 @@
-
-
 import 'package:flutter/material.dart';
+import 'package:flutter_animation_showcase/lib/neopop.dart';
 
 class CategoryCard extends StatelessWidget {
   final String title;
@@ -18,19 +17,27 @@ class CategoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: color,
-      child: InkWell(
-        onTap: () => Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => page),
+    return NeoPopTiltedButton(
+      isFloating: true,
+      onTapUp: () => Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => page),
+      ),
+      decoration: const NeoPopTiltedButtonDecoration(
+        color: Color.fromRGBO(255, 235, 52, 1),
+        plunkColor: Color.fromRGBO(255, 230, 3, 1),
+        shadowColor: Color.fromRGBO(255, 255, 0, 0.451),
+        showShimmer: true,
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(
+          vertical: 5,
         ),
-        borderRadius: BorderRadius.circular(16),
-        child: Column(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon, size: 48),
-            const SizedBox(height: 8),
+            Icon(icon, color: Theme.of(context).iconTheme.color, size: 48),
+            const SizedBox(width: 8),
             Text(
               title,
               style: Theme.of(context).textTheme.titleLarge,

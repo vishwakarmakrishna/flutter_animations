@@ -13,6 +13,8 @@ class AnimationShowcaseApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Animation Showcase',
+      debugShowCheckedModeBanner: false,
+      // darkTheme: AppTheme.darkTheme,
       theme: AppTheme.lightTheme,
       home: const HomePage(),
     );

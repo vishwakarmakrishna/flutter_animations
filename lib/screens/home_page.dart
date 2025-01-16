@@ -21,11 +21,8 @@ class HomePage extends StatelessWidget {
         title: const Text('Animation Showcase'),
         elevation: 0,
       ),
-      body: GridView.count(
-        crossAxisCount: MediaQuery.of(context).size.width > 600 ? 3 : 2,
+      body: ListView(
         padding: const EdgeInsets.all(16),
-        mainAxisSpacing: 16,
-        crossAxisSpacing: 16,
         children: [
           CategoryCard(
             title: 'Basic',
@@ -87,7 +84,12 @@ class HomePage extends StatelessWidget {
             color: Colors.deepPurple.shade100,
             page: const ExplicitAnimationsPage(),
           ),
-        ],
+        ]
+            .map(
+              (e) => Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10), child: e),
+            )
+            .toList(),
       ),
     );
   }
